@@ -1,0 +1,116 @@
+// GLOBAL SITE SETTINGS
+@keyframes mainFadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+main{
+    opacity: 0;
+    animation: mainFadeIn 0.4s 0.6s ease-in-out forwards;
+}
+footer{
+    opacity: 0;
+    animation: mainFadeIn 0.6s 0.8s ease-in-out forwards;
+}
+// IMPORT FONTS
+@font-face {
+    font-family: 'futura';
+    src: url('../assets/fonts/Futura_PT_Book.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura';
+    src: url('../assets/fonts/Futura_PT_Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'futura';
+    src: url('../assets/fonts/Futura_PT_Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+// SET SETTINGS FOR WHOLE SITE
+::selection {
+    background-color: $primary;
+    color: $white;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: calc(1.5rem * 0.25);
+}
+
+::-webkit-scrollbar-thumb {
+    box-sizing: padding-box;
+    background-color: rgba($primary, 1);
+    background-clip: padding-box;
+    border: 0 solid rgba($black, 1);
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+:root {
+    @media(max-width: 1199px) {
+        font-size: 81.52%;
+    }
+}
+*{
+    &:focus{
+        outline-color: rgba($primary, 0.5);
+        outline-offset: 0.25rem;
+    }
+}
+body {
+    overflow-y: overlay;
+    color: $black;
+    font-family: futura;
+}
+
+main {
+    overflow-x: hidden;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header {
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1,
+h2 {
+    font-size: 3.43rem;
+}
+
+a {
+    color: $secondary;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    &:hover {
+        color: $primary;
+        transition: all 0.3s ease;
+    }
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+}

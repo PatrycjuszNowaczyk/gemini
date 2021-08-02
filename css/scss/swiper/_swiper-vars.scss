@@ -1,0 +1,6 @@
+@use '../theme/colors' as *;
+$themeColor: $primary !default;
+$colors: (
+  'white': #ffffff,
+  'black': $black,
+) !default;

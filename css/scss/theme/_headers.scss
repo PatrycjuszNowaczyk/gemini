@@ -1,0 +1,69 @@
+@keyframes headerFadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+header{
+    opacity: 0;
+    animation: headerFadeIn 0.4s 0.3s ease-in-out forwards;
+    transition: all 0.3s ease-in-out;
+}
+.header__slider {
+    .swiper-slide {
+        width: 100%;
+        padding-top: 42.19%;
+        @media(max-width: 767px){
+            padding-top: 75%;
+        }
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .swiper-pagination {
+        max-width: 1590px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 1rem;
+        text-align: right;
+        opacity: 0;
+        @media(max-width: 767px){
+            opacity: 1;
+            text-align: center;
+        }
+    }
+    button {
+        background-color: $primary;
+        opacity: 0;
+        transition: all 0.3s ease;
+        bottom: 1.5rem;
+        position: absolute;
+        transform: translateY(-50%);
+        z-index: 1;
+        @media(max-width: 767px){
+            opacity: 1;
+        }
+        &.prev {
+            left: 1.5rem;
+        }
+        &.next {
+            right: 1.5rem;
+        }
+    }
+    &:hover {
+        button {
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+        .swiper-pagination {
+            opacity: 1;
+        }
+    }
+}
