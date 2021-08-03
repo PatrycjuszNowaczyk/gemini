@@ -1,6 +1,101 @@
 // THIS PART HAS ONLY SINGLE ELEMENTS
 // HEADERS
 // TEXTS
+// BREADCRUMBS
+.breadcrumbs {
+    position: relative;
+    color: $grey;
+    z-index: 1;
+    &__homeIcon {
+        position: relative;
+        &::before{
+            content: "";
+            width: 1.75em;
+            height: 1.75em;
+            position: absolute;
+            top: 50%;
+            left: 43%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background-color: transparent;
+            z-index: -1;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+        &:hover{
+            &::before{
+                background-color: $primary;
+            }
+            i{
+                color: $white;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+    ol {
+        position: relative;
+        display: inline-block;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            position: relative;
+            display: inline-block;
+            max-width: 10em;
+            overflow: hidden;
+            vertical-align: bottom;
+            margin-left: -0.65rem;
+            &:first-of-type{
+                margin-left: 0;
+            }
+            a {
+                color: $grey;
+                max-width: 10em;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                display: inline-block;
+                overflow: hidden;
+                white-space: nowrap;
+                vertical-align: bottom;
+                // &:hover {
+                //     color: $primary;
+                //     overflow: visible;
+                //     // background-color: $white;
+                // }
+                &::before {
+                    content: '»';
+                    margin: 0 0.5rem;
+                    // position: absolute;
+                    // top: 50%;
+                    // left: -1rem;
+                    // transform: translateY(-50%);
+                }
+                &::after {
+                    content: '';
+                    margin: 0 0.25rem;
+                }
+            }
+            &:hover {
+                overflow: visible;
+                z-index: 1;
+                .breadcrumbs__link {
+                    background-color: $grey;
+                    color: $white;
+                    max-width: unset;
+                    // overflow: visible;
+                }
+            }
+        }
+    }
+    // &__linkContainer{
+    //     position: relative;
+    //     display: inline-block;
+    //     &:hover{
+    //         background-color: $white;
+    //     }
+    // }
+}
+
 // BUTTONS
 @keyframes animIconUp {
     0% {

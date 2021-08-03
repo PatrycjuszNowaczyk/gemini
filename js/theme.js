@@ -39,7 +39,7 @@ function changeMobileMenu() {
         navMobileWrapper.appendChild(navLinks);
         navMobileWrapper.appendChild(navSocials);
         isMobileMenu = true;
-        if(isMobileMenuActive == true){
+        if (isMobileMenuActive == true) {
             document.body.style.overflow = 'hidden';
         }
     }
@@ -65,16 +65,16 @@ navMenuButton.addEventListener('click', () => {
         document.getElementsByTagName('nav')[0].style.backgroundColor = 'var(--bs-white)';
         document.body.style.overflow = 'hidden';
         navLogo.style.opacity = '1';
-        setTimeout(()=>{
+        setTimeout(() => {
             navLinks.style.opacity = '1';
-        },400)
-        setTimeout(()=>{
+        }, 400)
+        setTimeout(() => {
             navMobileWrapper.style.overflowY = 'overlay';
-        },600)
-        setTimeout(()=>{
+        }, 600)
+        setTimeout(() => {
             navSearch.style.opacity = '1';
             navSocials.style.opacity = '1';
-        },800)
+        }, 800)
         isMobileMenuActive = true;
     }
     else {
@@ -92,20 +92,20 @@ navMenuButton.addEventListener('click', () => {
 }, false);
 
 // change navigation background on scroll
-window.addEventListener('scroll', ()=> {
-    if(window.pageYOffset > 50){
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 50) {
         document.getElementsByTagName('nav')[0].classList.add('js-scrolled');
     }
-    else{
+    else {
         document.getElementsByTagName('nav')[0].classList.remove('js-scrolled');
     }
 }, false);
 
-// add top padding to header if there is a class js-add-top-padding
-if(document.getElementsByTagName('header')[0].classList.contains('js-add-top-padding')){
+// add top padding to header tag if there is a class js-add-top-padding
+if (document.getElementsByTagName('header')[0].classList.contains('js-add-top-padding')) {
     document.getElementsByTagName('header')[0].style.paddingTop = `${navWrapper.clientHeight}px`;
-    window.addEventListener('resize', ()=> {
-        setTimeout(()=>{
+    window.addEventListener('resize', () => {
+        setTimeout(() => {
             document.getElementsByTagName('header')[0].style.paddingTop = `${navWrapper.clientHeight}px`;
         }, 600);
     })
@@ -136,6 +136,20 @@ if (bigImgAndSlider) {
             isMobileChanged = false;
         }
     }, false);
+}
+// component .headerOne
+let headerOne = document.getElementById('headerOne');
+if (headerOne) {
+    let buttonScrollDownTo = document.getElementById('js-button-scroll-down-to');
+    let elementScrollDownTo = document.getElementById('js-scroll-down-to');
+    buttonScrollDownTo.addEventListener('click', () => {
+        window.scrollTo(0, elementScrollDownTo.offsetTop - navWrapper.clientHeight);
+        // window.scrollTo(0, elementScrollDownTo.offsetTop);
+    }, false);
+    headerOne.getElementsByClassName('headerOne__image')[0].getElementsByClassName('wrapper')[0].style.top = `calc(${navWrapper.clientHeight}px + 1.5rem)`;
+    window.addEventListener('resize', () => {
+        headerOne.getElementsByClassName('headerOne__image')[0].getElementsByClassName('wrapper')[0].style.top = `calc(${navWrapper.clientHeight}px + 1.5rem)`;
+    }, false)
 }
 /* SLIDERS */
 // 1. check if there is a specific slider on a page
@@ -217,4 +231,52 @@ if (document.querySelector('.filmSlider__swiper')) {
             prevEl: '.prev',
         },
     });
+}
+if (document.querySelector('.gallerySlider')) {
+
+    // let lightbox = new SimpleLightbox('.gallerySlider__swiper a', {
+    //     disableScroll: true
+    // });
+    const swiper = new Swiper('.gallerySlider__swiper', {
+        // Optional parameters
+        slidesPerView: '1',
+        centeredSlides: true,
+        loop: true,
+        // spaceBetween: 0,
+        grabCursor: false,
+        keyboard: {
+            enabled: true,
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: true,
+        },
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 30,
+            slideShadows: true,
+        },
+        speed: 400,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.next',
+            prevEl: '.prev',
+        },
+        on: {
+            init: function () {
+                setTimeout(() => {
+                    let lightbox = new SimpleLightbox('.gallerySlider__swiper a', {
+                        disableScroll: true,
+                        uniqueImages: false,
+                        showCounter: false
+                    });
+                }, 600);
+            },
+        }
+    });
+    // swiper.on('beforeLoopFix', function () {
+    //     let lightboxGallerySlider = new SimpleLightbox('.gallerySlider__swiper a', { 
+    //         disableScroll: true
+    //      });
+    //   });
 }

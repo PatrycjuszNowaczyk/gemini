@@ -128,7 +128,7 @@
                 top: 50%;
                 right: var(--bs-gutter-x);
                 transform: translateY(-50%);
-                @media(max-width: 767px){
+                @media(max-width: 767px) {
                     right: calc(var(--bs-gutter-x) * 0.5);
                 }
             }
@@ -385,6 +385,61 @@
     }
 }
 
+.gallerySlider {
+    &__container {
+        position: relative;
+        width: 100%;
+        max-width: 780px;
+        margin: 0 auto;
+        button.btn {
+            position: absolute;
+            top: 50%;
+            transform: translate(0, -50%);
+            z-index: 1;
+            &.prev {
+                left: calc(var(--bs-gutter-x) * -1.5);
+                @media(max-width: 991px) {
+                    left: calc(var(--bs-gutter-x));
+                }
+            }
+            &.next {
+                right: calc(var(--bs-gutter-x) * -1.5);
+                @media(max-width: 991px) {
+                    right: calc(var(--bs-gutter-x));
+                }
+            }
+        }
+    }
+    &__swiper {
+        width: 100%;
+        max-width: 780px;
+        position: relative;
+        .swiper-overflow-hidden {
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            padding-top: 75%;
+            position: relative;
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: sepia(0.2);
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    filter: sepia(0);
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
 
 /* CARDS */
 
@@ -406,12 +461,16 @@
         }
     }
     &__text {
+        time {
+            color: $primary;
+            font-weight: 900;
+        }
         p {
             font-size: 1.5rem;
-            min-height: 3.5rem;
+            min-height: 5rem;
             line-height: 1.75rem;
             margin-bottom: 0.5rem;
-            @media(max-width: 575px){
+            @media(max-width: 575px) {
                 font-size: 1rem;
                 line-height: 1.5rem;
             }

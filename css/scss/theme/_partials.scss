@@ -25,46 +25,59 @@
 
 // COLORS
 .color {
-    &-primary{
+    &-primary {
         color: $primary;
     }
-    &-secondary{
+    &-secondary {
         color: $secondary;
     }
-    &-grey{
+    &-grey {
         color: $grey;
     }
-    &-grey-light{
+    &-grey-light {
         color: $grey-light;
     }
     &-white {
         color: $white;
     }
-    &-black{
+    &-black {
         color: $black;
     }
 }
 
 // HOVER EFFECTS
-@keyframes hoverEffect {
-    0% {
-        z-index: 1000;
-    }
-    50% {
+@keyframes hoverEffectIn {
+    from {
         box-shadow: 0 0 0 transparent;
         transform: translateY(0);
     }
-    100% {
+    to {
         box-shadow: 0 1rem 3rem rgba($black, 0.3);
         transform: translateY(-1rem);
     }
 }
 
+@keyframes hoverEffectOut {
+    from {
+        transform: translateY(-1rem);
+        box-shadow: 0 1rem 3rem rgba($black, 0.3);
+    }
+    to {
+        box-shadow: 0 0 0 transparent;
+        transform: translateY(0);
+    }
+}
+
 .hover-effect {
-    box-shadow: 0 0 0 transparent;
-    transform: translateY(0);
-    transition: all 0.3s ease;
+    animation: hoverEffectOut 0.15s ease forwards;
     &:hover {
-        animation: hoverEffect 0.8s ease forwards;
+        z-index: 1000;
+        animation: hoverEffectIn 0.2s 0.15s ease-in-out forwards;
+    }
+    @media(max-width: 767px){
+        animation: unset;
+        &:hover{
+            animation: unset;
+        }
     }
 }
