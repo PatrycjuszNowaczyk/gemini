@@ -1,20 +1,23 @@
 // GLOBAL SITE SETTINGS
 @keyframes mainFadeIn {
-    from{
+    from {
         opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
     }
 }
-main{
+
+main {
     opacity: 0;
     animation: mainFadeIn 0.4s 0.6s ease-in-out forwards;
 }
-footer{
+
+footer {
     opacity: 0;
     animation: mainFadeIn 0.6s 0.8s ease-in-out forwards;
 }
+
 // IMPORT FONTS
 @font-face {
     font-family: 'futura';
@@ -64,12 +67,16 @@ footer{
         font-size: 81.52%;
     }
 }
-*{
-    &:focus{
+
+* {
+    &:focus {
         outline-color: rgba($primary, 0.5);
         outline-offset: 0.25rem;
     }
+    scrollbar-width: thin;
+    scrollbar-color: $primary $white;
 }
+
 body {
     overflow-y: overlay;
     color: $black;
@@ -94,7 +101,8 @@ h1,
 h2 {
     font-size: 3.43rem;
 }
-h3{
+
+h3 {
     font-size: 1.6rem;
 }
 
@@ -117,4 +125,13 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+select,
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }

@@ -17,7 +17,10 @@ header {
 
 /* HEADER WITH BIG SLIDER */
 
-.header__slider {
+.headerSlider {
+    &__sliderWrapper {
+        position: relative;
+    }
     .swiper-slide {
         width: 100%;
         padding-top: 42.19%;
@@ -72,6 +75,81 @@ header {
             opacity: 1;
         }
     }
+    &__info {
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        transform: translateY(50%);
+        z-index: 1;
+        @media(min-width: 768px) and (max-width: 1590px){
+            bottom: 9rem;
+            transform: unset;
+        }
+        @media(max-width: 767px){
+            position: relative;
+            bottom: unset;
+            transform: unset;
+            display: flex;
+        }
+        &Brick {
+            max-width: 30rem;
+            background-color: $primary;
+            font-size: 1.7em;
+            padding: 1em;
+            max-width: 14rem;
+            margin-bottom: 0.5rem;
+            @media(max-width: 767px){
+                margin: 0;
+                flex: 1 1 100%;
+                max-width: unset;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+            p{
+                width: fit-content;
+                margin: 0;
+                width: 100%;
+                time{
+                    font-size: 1.2rem;
+                    color: $white;
+                }
+                @media(max-width: 1590px){
+                    font-size: 0.5em;
+                    time{
+                        font-size: 0.75em;
+                    }
+                }
+                @media(max-width: 767px){
+                    font-size: 1em;
+                    text-align: right;
+                }
+            }
+            i {
+                color: $black;
+                margin: 0.3em 0 0 0.5em;
+                font-weight: 900;
+                float: right;
+            }
+            &:last-of-type{
+                margin-bottom: 0;
+            }
+            &.--black {
+                background-color: $black;
+                color: $white;
+                i{
+                    color: $white;
+                }
+                @media(max-width: 767px){
+                    p{
+                        text-align: left;
+                        i{
+                            float: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 
@@ -80,7 +158,7 @@ header {
 .headerOne {
     position: relative;
     overflow: visible;
-    @media(max-width: 767px){
+    @media(max-width: 767px) {
         background-color: $grey-light;
     }
     &__background {
@@ -95,7 +173,7 @@ header {
         @media(max-width: 1919px) {
             right: 0;
         }
-        @media(max-width: 767px){
+        @media(max-width: 767px) {
             display: none;
         }
     }
@@ -106,7 +184,7 @@ header {
             position: sticky;
             top: 100px;
             padding-top: 100%;
-            @media(max-width: 767px){
+            @media(max-width: 767px) {
                 padding-top: 75%;
             }
             img {
@@ -129,7 +207,7 @@ header {
         h1 {
             font-size: 2.85rem;
         }
-        h2{
+        h2 {
             font-size: 1.6rem;
         }
         time {
@@ -139,27 +217,27 @@ header {
         p {
             font-size: 1.15rem;
         }
-        &Bold{
+        &Bold {
             font-weight: 900;
         }
-        &Normal{
+        &Normal {
             font-weight: 400;
         }
     }
-    &__socials{
+    &__socials {
         color: $primary;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        a{  
+        a {
             margin-left: 0.5rem;
             border-color: $primary;
-            i{
+            i {
                 color: $primary !important;
             }
-            &:hover{
+            &:hover {
                 background-color: $primary;
-                i{
+                i {
                     color: $grey-light !important;
                 }
             }
@@ -176,7 +254,7 @@ button#js-button-scroll-down-to {
         transform: unset;
         right: var(--bs-gutter-x);
     }
-    @media(max-width: 767px){
+    @media(max-width: 767px) {
         right: calc(var(--bs-gutter-x) * 0.5);
     }
 }

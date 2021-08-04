@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Park</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="assets/fonts/lineicons/lineicons.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/simple-lightbox.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container-xxl">
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="nav__wrapper">
+                        <div class="nav__logo">
+                            <a href="index.html">
+                                <img id="nav-logo" src="assets/img/logo_geminipark.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="nav__linksWrapper">
+                            <button id="nav-menu-button" class="hamburger hamburger--spin d-md-none" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                            <div class="nav__searchAndSocials">
+                                <div id="nav-search" class="nav__searchWrapper">
+                                    <form id="nav-search-form" action="" class="nav__searchForm">
+                                        <input id="nav-search-input" name="nav-search" type="search" class="nav__searchInput" autocomplete="off">
+                                        <button type="submit" class="nav__searchButton"><i class="lni lni-search-alt"></i></button>
+                                    </form>
+                                </div>
+                                <div id="nav-socials" class="nav__socials">
+                                    <a href="" target="_blank" class="socialIcon me-2"><i class="lni lni-facebook-filled"></i></a>
+                                    <a href="" target="_blank" class="socialIcon me-2"><i class="lni lni-instagram-original"></i></a>
+                                    <a href="" target="_blank" class="socialIcon"><i class="lni lni-youtube"></i></a>
+                                </div>
+                                <div class="languageSwitcher"></div>
+                            </div>
+                            <div id="nav-links" class="nav__links">
+                                <ul>
+                                    <li>
+                                        <a href="shops.html">sklepy</a>
+                                    </li>
+                                    <li>
+                                        <a href="">plan centrum</a>
+                                    </li>
+                                    <li>
+                                        <a href="feeds.html">aktualności</a>
+                                    </li>
+                                    <li>
+                                        <a href="">promocje i nowości</a>
+                                    </li>
+                                    <li>
+                                        <a href="">informacje</a>
+                                    </li>
+                                    <li>
+                                        <a href="">kontakt</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nav-mobile-wrapper" class="nav__mobile d-md-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="js-add-top-padding">
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs fs-7 my-4">
+                        <a href="index.html" class="breadcrumbs__homeIcon">
+                            <i class="lni lni-home"></i>
+                        </a>
+                        <ol>
+                            <li>
+                                <a href="" class="breadcrumbs__link">Lorem, ipsum dolor.</a>
+                            </li>
+                            <li>
+                                <a href="" class="breadcrumbs__link">Lorem, ipsum dolor. Lorem, ipsum.</a>
+                            </li>
+                            <li>
+                                <a href="" class="breadcrumbs__link">Lorem, ipsum dolor.</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section id="search-panel" class="searchPanel">
+            <div class="container-xxl">
+                <div class="row">
+                    <div class="col-12 col-sm-10 offset-sm-1 offset-md-0">
+                        <h2 class="me-md-5 fs-1 text-center text-md-start color-primary">Promocje i nowości</h2>
+                        <p class="fs-5 text-center text-md-start">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium ex quidem fugit dicta, quia alias consequatur! Nemo est expedita labore non delectus quos optio et sapiente iste amet voluptatum similique nostrum ipsum blanditiis voluptates at quae repellendus iure, veniam tenetur autem quaerat facere! Sint ea vero deserunt a repudiandae reiciendis provident sunt culpa. Placeat natus commodi voluptatum vitae inventore delectus excepturi rem recusandae aperiam ipsam, sunt eum quos iusto ullam aspernatur molestiae. Nisi, repudiandae sapiente?
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-center justify-content-md-start">
+                            <div class="dropdown">
+                                <input type="checkbox" name="" id="category-dropdown-toggle" class="dropdown__toggler d-none">
+                                <label for="category-dropdown-toggle" class="dropdown__title">
+                                    <p for="">Wybierz kategorie</p>
+                                    <i class="lni lni-chevron-down"></i>
+                                </label>
+                                <ul class="dropdown__list">
+                                    <li class="dropdown__item">
+                                    <input type="checkbox" name="" id="category-1">
+                                    <label for="category-1">
+                                        <span>
+                                            sport
+                                        </span>
+                                        <i class="lni lni-checkmark"></i>
+                                    </label>
+                                <li class="dropdown__item">
+                                    <input type="checkbox" name="" id="category-2">
+                                    <label for="category-2">
+                                        <span>
+                                            usługi
+                                        </span>
+                                        <i class="lni lni-checkmark"></i>
+                                    </label>
+                                </li>
+                                    <li class="dropdown__item">
+                                    <input type="checkbox" name="" id="category-3">
+                                    <label for="category-3">
+                                        <span>
+                                            restauracje
+                                        </span>
+                                        <i class="lni lni-checkmark"></i>
+                                    </label>
+                                </li>
+                                    <li class="dropdown__item">
+                                    <input type="checkbox" name="" id="category-4">
+                                    <label for="category-4">
+                                        <span>
+                                            ubrania
+                                        </span>
+                                        <i class="lni lni-checkmark"></i>
+                                    </label>
+                                </li>
+                                    <li class="dropdown__item">
+                                    <input type="checkbox" name="" id="category-5">
+                                    <label for="category-5">
+                                        <span>
+                                            elektronika
+                                        </span>
+                                        <i class="lni lni-checkmark"></i>
+                                    </label>
+                                </li>
+                                    <li class="dropdown__item">
+                                    <input type="checkbox" name="" id="category-6">
+                                    <label for="category-6">
+                                        <span>
+                                            kawiarnie
+                                        </span>
+                                        <i class="lni lni-checkmark"></i>
+                                    </label>
+                                </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <p class="fs-5 my-4 text-center text-md-start">Znaleziono <b>107 wyników</b> dla <span class="text-uppercase">ccc</span></p>
+                    </div>
+                </div>
+                <div class="row g-4 mb-4">
+                    <div class="col-12">
+                        <div class="searchPanel__buttons text-center text-md-start">
+                            <button class="btn --medium --fill">wszystkie</button>
+                            <button class="btn --medium">aktualności</button>
+                            <button class="btn --medium">promocje i nowości</button>
+                            <button class="btn --medium">informacje</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-12">
+                    <p class="mb-0 mb-md-4">
+                        <span class="color-primary text-uppercase me-3">aktualności</span>
+                        Znaleziono <b>15 wyników</b> dla <span class="text-uppercase">ccc</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <section id="search-results" class="searchResults pb-5">
+            <div class="container-xxl pt-4 pb-5">
+                <div class="row g-4 pt-4">
+                    <!-- AKTUALNOŚCI -->
+                    <!-- wyniki wyszukiwania START -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__image">
+                                    <div class="cardSimpleImg__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_4x3ratio_7_small.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__image">
+                                    <div class="cardSimpleImg__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_4x3ratio_8_small.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__image">
+                                    <div class="cardSimpleImg__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_4x3ratio_1_big.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__image">
+                                    <div class="cardSimpleImg__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_4x3ratio_7_small.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- wyniki wyszukiwania END -->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center pb-4 pt-5">
+                            <a href="" class="btn">zobacz więcej<i class="lni lni-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PROMOCJE I NOWOŚCI -->
+            <div class="container-xxl">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-0 mb-md-4">
+                            <span class="color-primary text-uppercase me-3">promocje i nowości</span>
+                            Znaleziono <b>39 wyników</b> dla <span class="text-uppercase">ccc</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-xxl pt-4 pb-5">
+                <div class="row g-4 pt-4">
+                    <!-- wyniki wyszukiwania START -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__image">
+                                    <div class="cardSimpleImg__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_4x3ratio_7_small.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__image">
+                                    <div class="cardSimpleImg__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_4x3ratio_8_small.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__image">
+                                    <div class="cardSimpleImg__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_4x3ratio_1_big.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__image">
+                                    <div class="cardSimpleImg__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_4x3ratio_7_small.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- wyniki wyszukiwania END -->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center pb-4 pt-5">
+                            <a href="" class="btn">zobacz więcej<i class="lni lni-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- INFORMACJE -->
+            <div class="container-xxl">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-0 mb-md-4">
+                            <span class="color-primary text-uppercase me-3">informacje</span>
+                            Znaleziono <b>53 wyników</b> dla <span class="text-uppercase">ccc</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-xxl pt-4 pb-5">
+                <div class="row g-4 pt-4">
+                    <!-- wyniki wyszukiwania START -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg --noImage">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg --noImage">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg --noImage">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleImg --noImage">
+                            <div class="cardSimpleImg__wrapper">
+                                <div class="cardSimpleImg__description">
+                                    <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, quia. Vel dignissimos iusto labore sequi aliquid, eveniet error possimus quasi itaque velit laboriosam? Ab quisquam sapiente animi perspiciatis, facere sed numquam commodi eaque ex, deserunt modi nemo, asperiores ipsam. Non sequi perspiciatis consequuntur, veniam praesentium facilis ratione recusandae. Officiis, aperiam.
+                                </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- wyniki wyszukiwania END -->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center pb-4 pt-5">
+                            <a href="" class="btn">zobacz więcej<i class="lni lni-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="bg-black color-white">
+            <div class="container-xxl pb-4">
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-md-3 col-xxl-2 d-flex justify-content-center justify-content-md-start">
+                        <div class="text-center text-md-start">
+                            <address>
+                                <p class="fw-bold text-uppercase mb-1">Gemini Park Tychy</p>
+                                <p class=" mb-1">ul. Towarowa 2C,</p>
+                                <p class=" mb-1">43-100 Tychy</p>
+                                <p class=" mb-1">
+                                tel.: <a href="tel:+48322138601" class="color-white">+48 32 213 86 01</a>
+                                </p>
+                            </address>
+                            <div>
+                                <a href="" class="btn --white">sprawdź jak dojechać<i class="lni lni-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 col-xxl-2 d-flex justify-content-center justify-content-xxl-end">
+                        <div class="text-center text-md-start">
+                            <p class="text-uppercase mb-1">informacje</p>
+                            <p class=" mb-1">
+                            <a href="" class="color-white">Godziny otwarcia</a>
+                            </p>
+                            <p class=" mb-1">
+                            <a href="" class="color-white">O centrum</a>
+                            </p>
+                            <p class=" mb-1">
+                            <a href="" class="color-white">Usługi</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 col-xxl-2 d-flex justify-content-center justify-content-xxl-end">
+                        <div class="text-center text-md-start">
+                            <p class="text-uppercase mb-1">biznes</p>
+                            <p class=" mb-1">
+                            <a href="" class="color-white">Wynajem</a>
+                            </p>
+                            <p class=" mb-1">
+                            <a href="" class="color-white">Oferty pracy</a>
+                            </p>
+                            <p class=" mb-1">
+                            <a href="" class="color-white">Gemini Holding</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 col-xxl-2 d-flex justify-content-center justify-content-xxl-end">
+                        <div class="text-center text-md-start">
+                            <p class="text-uppercase mb-1">kontakt</p>
+                            <p class=" mb-1">
+                            <a href="" class="color-white">Jak dojechać</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xxl-4 d-flex align-items-end">
+                        <p class="w-100 mb-0 text-center text-xxl-end">
+                        <a href="" class="color-white">polityka prywatności</a>
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white">
+            <div class="container-xxl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex flex-column flex-sm-row  justify-content-sm-between align-items-center pt-2 pb-4">
+                            <p class="mb-3 m-sm-0 fs-7">
+                               <span class="d-block d-sm-inline text-center">technologia + kreacja <a href="https://www.synermedia.pl/" target="_blank" class="color-black me-sm-4">synermedia.pl</a></span>
+                               <span class="d-block d-sm-inline text-center">Gemini Park. All rights reserved.</span>
+                            </p>
+                            <p class="m-0">
+                                <a href="" target="_blank" class="socialIcon me-2"><i class="lni lni-facebook-filled"></i></a>
+                                <a href="" target="_blank" class="socialIcon me-2"><i class="lni lni-instagram-original"></i></a>
+                                <a href="" target="_blank" class="socialIcon"><i class="lni lni-youtube"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- globally used scripts -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper.js"></script>
+    <!-- used for this view -->
+    <script src="js/simple-lightbox.min.js"></script>
+    <!-- global theme script -->
+    <script src="js/theme.js"></script>
+</body>
+
+</html>

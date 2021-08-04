@@ -1,6 +1,116 @@
 // THIS PART HAS ONLY SINGLE ELEMENTS
 // HEADERS
 // TEXTS
+// DROPDOWNS
+.dropdown {
+    width: 20.6rem;
+    position: relative;
+    display: inline-block;
+    &__title {
+        position: relative;
+        border: 2px solid $primary;
+        border-bottom: 0;
+        // padding: 1.05em 3em calc(1.05em + 2px) 1.5em;
+        padding: 0.75rem 3rem calc(0.75rem + 2px) 1.5rem;
+        width: 100%;
+        cursor: pointer;
+        p {
+            margin: 0;
+        }
+        i {
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            transform-origin: center 0.15rem;
+            transition: all 0.15s ease-in-out;
+        }
+        &:hover {
+            color: $primary;
+            i {
+                color: $primary;
+            }
+        }
+    }
+    &__list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        background-color: $white;
+        overflow: auto;
+        border: 2px solid $primary;
+        border-top: 0;
+        max-height: 2px;
+        list-style: none;
+        padding: 0 .75rem 0 0.75rem;
+        margin: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    &__item {
+        position: relative;
+        height: 1.75rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        input[type='checkbox'] {
+            width: 1.75rem;
+            height: 1.75rem;
+            border: 1px solid $primary;
+            // border-radius: 50%;
+            margin: 0;
+            cursor: pointer;
+            &:checked {
+                background-color: $primary;
+                // border-color: transparent;
+                &:hover {
+                    opacity: 0.75;
+                }
+            }
+            &:checked+label {
+                color: $primary;
+                i {
+                    // opacity: 1 !important;
+                    display: block;
+                }
+            }
+        }
+        i {
+            position: absolute;
+            left: 0.35rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            color: $white;
+            display: none;
+            font-weight: 900;
+        }
+        label {
+            align-items: center;
+            vertical-align: bottom;
+            flex: 1 1 100%;
+            cursor: pointer;
+            padding-left: 0.75rem;
+            span {
+                flex: 1 1 100%;
+            }
+        }
+        &:hover {
+            input[type='checkbox']:not(:checked) {
+                background-color: rgba($primary, 0.1);
+            }
+        }
+    }
+    input[type='checkbox']:checked.dropdown__toggler~.dropdown__list {
+        max-height: 11.25rem;
+        transition: all 0.3s ease-in-out;
+    }
+    input[type='checkbox']:checked.dropdown__toggler~.dropdown__title>i {
+        transform: rotateZ( calc(3 * -180deg));
+        transition: all 0.15s ease-out;
+    }
+}
+
 // BREADCRUMBS
 .breadcrumbs {
     position: relative;
@@ -8,7 +118,9 @@
     z-index: 1;
     &__homeIcon {
         position: relative;
-        &::before{
+        color: $grey;
+        margin-right: 0.5rem;
+        &::before {
             content: "";
             width: 1.75em;
             height: 1.75em;
@@ -22,11 +134,11 @@
             transition: all 0.3s ease;
             pointer-events: none;
         }
-        &:hover{
-            &::before{
+        &:hover {
+            &::before {
                 background-color: $primary;
             }
-            i{
+            i {
                 color: $white;
                 transition: all 0.3s ease;
             }
@@ -38,15 +150,15 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        li {
+        li:not(.breadcrumbs__homeIcon) {
             position: relative;
             display: inline-block;
             max-width: 10em;
             overflow: hidden;
             vertical-align: bottom;
             margin-left: -0.65rem;
-            &:first-of-type{
-                margin-left: 0;
+            @media(max-width: 575px) {
+                max-width: 8em;
             }
             a {
                 color: $grey;
@@ -57,18 +169,12 @@
                 overflow: hidden;
                 white-space: nowrap;
                 vertical-align: bottom;
-                // &:hover {
-                //     color: $primary;
-                //     overflow: visible;
-                //     // background-color: $white;
-                // }
+                @media(max-width: 575px) {
+                    max-width: 8em;
+                }
                 &::before {
                     content: '»';
                     margin: 0 0.5rem;
-                    // position: absolute;
-                    // top: 50%;
-                    // left: -1rem;
-                    // transform: translateY(-50%);
                 }
                 &::after {
                     content: '';
@@ -82,18 +188,10 @@
                     background-color: $grey;
                     color: $white;
                     max-width: unset;
-                    // overflow: visible;
                 }
             }
         }
     }
-    // &__linkContainer{
-    //     position: relative;
-    //     display: inline-block;
-    //     &:hover{
-    //         background-color: $white;
-    //     }
-    // }
 }
 
 // BUTTONS
@@ -287,9 +385,58 @@
             background-color: $primary;
         }
     }
+    &.--medium {
+        padding: 1.05rem 4.4rem;
+        line-height: 1.5;
+        @media(max-width: 991px) {
+            padding: 1.05rem 3.4rem;
+        }
+        &.--fill {
+            background-color: $primary;
+            color: $white;
+            border-color: $primary;
+        }
+    }
 }
 
 // FORMS
+//search
+.onPageSearch {
+    &__wrapper {
+        position: relative;
+        display: inline-block;
+        width: 30.8rem;
+    }
+    &__form {
+        display: block;
+    }
+    &__input {
+        width: 100%;
+        position: relative;
+        border: 2px solid $primary;
+        padding: 1.05em 3em 1.05em 1.5em;
+        text-transform: uppercase;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &__button {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 1.5rem;
+        i {
+            font-weight: 900;
+            color: $primary;
+        }
+    }
+}
+
 // SOCIALS
 .socialIcon {
     display: inline-block;
