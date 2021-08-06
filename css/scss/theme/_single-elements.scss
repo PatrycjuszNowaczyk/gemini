@@ -3,14 +3,22 @@
 // TEXTS
 // DROPDOWNS
 .dropdown {
-    width: 20.6rem;
+    max-width: 20.6rem;
+    width: 100%;
     position: relative;
     display: inline-block;
+    @media(max-width: 767px){
+        max-width: 30.8rem;
+    }
+    // align-self: flex-start;
     &__title {
         position: relative;
         border: 2px solid $primary;
         border-bottom: 0;
+        //-----------------------------------------
+        //padding for version to fit .btn.--medium
         // padding: 1.05em 3em calc(1.05em + 2px) 1.5em;
+        //-----------------------------------------
         padding: 0.75rem 3rem calc(0.75rem + 2px) 1.5rem;
         width: 100%;
         cursor: pointer;
@@ -34,7 +42,7 @@
     }
     &__list {
         position: absolute;
-        top: 100%;
+        top: calc(100% - 2px);
         left: 0;
         width: 100%;
         z-index: 100;
@@ -128,18 +136,18 @@
             top: 50%;
             left: 43%;
             transform: translate(-50%, -50%);
+            border: 1px solid transparent;
             border-radius: 50%;
-            background-color: transparent;
             z-index: -1;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
             pointer-events: none;
         }
         &:hover {
             &::before {
-                background-color: $primary;
+                border: 1px solid $primary;
+                transition: all 0.15s ease-in-out;
             }
             i {
-                color: $white;
                 transition: all 0.3s ease;
             }
         }
@@ -169,6 +177,7 @@
                 overflow: hidden;
                 white-space: nowrap;
                 vertical-align: bottom;
+                border: 1px solid transparent;
                 @media(max-width: 575px) {
                     max-width: 8em;
                 }
@@ -185,8 +194,8 @@
                 overflow: visible;
                 z-index: 1;
                 .breadcrumbs__link {
-                    background-color: $grey;
-                    color: $white;
+                    background-color: $white;
+                    border: 1px solid $primary;
                     max-width: unset;
                 }
             }
@@ -314,6 +323,15 @@
             transition: transform 0.6s ease-in-out;
         }
     }
+    &.--fill{
+        background-color: $primary;
+        color: $white;
+        border-color: $primary;
+        &:hover{
+            color: $primary !important;
+            background-color: transparent;
+        }
+    }
     &.--white {
         color: $white;
         i {
@@ -399,13 +417,36 @@
     }
 }
 
+.btn-close{
+    background-color: transparent;
+    border: transparent;
+    padding: 0.75rem;
+    i{
+        font-weight: 900;
+        transition: all 0.3s ease-in-out;
+    }
+    &:hover{
+        i{
+            transform: scale(1.2);
+            transition: all 0.15s ease-in-out;
+            text-shadow: 0 0 1rem rgba($black, 0.3);
+        }
+    }
+    &:active{
+        i{
+            transform: scale(1);
+        }
+    }
+}
+
 // FORMS
 //search
 .onPageSearch {
     &__wrapper {
         position: relative;
         display: inline-block;
-        width: 30.8rem;
+        max-width: 30.8rem;
+        width: 100%;
     }
     &__form {
         display: block;
@@ -414,7 +455,11 @@
         width: 100%;
         position: relative;
         border: 2px solid $primary;
-        padding: 1.05em 3em 1.05em 1.5em;
+        //-----------------------------------------
+        //padding for version to fit .btn.--medium
+        // padding: 1.05em 3em 1.05em 1.5em;
+        //-----------------------------------------
+        padding: 0.75rem 3rem 0.75rem 1.5rem;
         text-transform: uppercase;
         &:focus {
             outline: 0;
@@ -440,7 +485,7 @@
 // SOCIALS
 .socialIcon {
     display: inline-block;
-    color: #0e0e0e;
+    color: $black;
     border: 2px solid currentColor;
     border-radius: 100%;
     font-size: 1rem;
@@ -454,5 +499,20 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+    &:hover{
+        color: $primary;
+    }
+    &.--orange{
+        border-color: $primary;
+        i{
+            color: $primary;
+        }
+        &:hover{
+            border-color: $black;
+            i{
+                color: $black;
+            }
+        }
     }
 }

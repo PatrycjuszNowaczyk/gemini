@@ -151,6 +151,128 @@ if (headerOne) {
         headerOne.getElementsByClassName('headerOne__image')[0].getElementsByClassName('wrapper')[0].style.top = `calc(${navWrapper.clientHeight}px + 1.5rem)`;
     }, false)
 }
+
+// component .cardBigShowup
+// steps of card's show hidden information animation
+//// 1. get all .cardBigShowup elements if there are on page then run script
+//// 2. get cover element
+//// 3. foreach .cardBigShowup add eventListener
+//// 4. if clicked button then get .hiddenText element
+// 5. count left and right for text element
+// 6. get height of text element
+// 7. put clone of hidden text to hidden dummy container and get min-height for visible .hiddenText element
+// 8. get height of a dummy container
+// 9. add --active class to element that is showing .hiddenText
+// 10. set cover opacity to 1
+// 11. set left, right and min-height of .hiddenText
+// 12. set opacity to 1 to hidden text
+// 13. remove inline left and right to .hiddenText
+// 14. set min-height to .hiddenText
+// 15. set opacity to 1 to content of .hiddenText
+
+let cardBigShowupElements = Array.from(document.getElementsByClassName('cardBigShowup'));
+if (cardBigShowupElements[0]) {
+    console.log('there are cards that have hidden text');
+    let coverElement = document.querySelector('.cardBigShowup__cover');
+    let dummyElement = document.querySelector('.cardBigShowup__dummy');
+    let currentElement = {
+        'element': null,
+        'cardBigShowup__hiddenText': {
+            'element': null,
+            'height': null
+        },
+        'cardBigShowup__text': {
+            'offset-left': null,
+            'offset-right': null,
+            'height': null
+        },
+        'container': {
+            'element': null,
+            'padding': null
+        }
+    };
+    window.addEventListener('resize', () => {
+        if (currentElement.element) {
+            setTimeout(() => {
+                currentElement.cardBigShowup__text.style.minHeight = currentElement.cardBigShowup__hiddenText.clientHeight + 'px';
+            }, 300)
+        }
+    }, false);
+    cardBigShowupElements.forEach(function (element) {
+        element.querySelector('button.btn').addEventListener('click', () => {
+            let div = document.createElement('div');
+            currentElement['element'] = element;
+            currentElement['cardBigShowup__text'] = element.querySelector('.cardBigShowup__text');
+            currentElement['cardBigShowup__hiddenText'] = element.querySelector('.cardBigShowup__hiddenText');
+            dummyElement.innerHTML = currentElement.cardBigShowup__hiddenText.cloneNode(true).innerHTML;
+            currentElement.container.element = currentElement.element.parentNode.parentNode;
+            currentElement.container["padding"] = currentElement.element.parentNode.offsetWidth - currentElement.element.appendChild(div).offsetWidth;
+            currentElement.element.removeChild(div);
+            currentElement.cardBigShowup__text["offset-left"] = currentElement.cardBigShowup__text.closest('.col-12').offsetLeft + 0.5 * currentElement.container.padding;
+            currentElement.cardBigShowup__text["offset-right"] = currentElement.cardBigShowup__text.closest('.row').offsetWidth - currentElement.cardBigShowup__text["offset-left"] - currentElement.cardBigShowup__text.offsetWidth;
+            currentElement.cardBigShowup__hiddenText.style.left = currentElement.cardBigShowup__text["offset-left"] + 'px';
+            currentElement.cardBigShowup__hiddenText.style.right = currentElement.cardBigShowup__text["offset-right"] + 'px';
+            currentElement.cardBigShowup__hiddenText.style.minHeight = currentElement.cardBigShowup__text.closest('td').clientHeight + 'px';
+            currentElement.cardBigShowup__hiddenText.style.maxHeight = currentElement.cardBigShowup__text.closest('td').clientHeight + 'px';
+            coverElement.classList.add('--active');
+            currentElement.element.classList.add('--active');
+            currentElement.cardBigShowup__hiddenText.style.left = currentElement.container.padding * 0.5 + 'px';
+            currentElement.cardBigShowup__hiddenText.style.right = currentElement.container.padding * 0.5 + 'px';
+            setTimeout(() => {
+                currentElement.cardBigShowup__hiddenText.style.maxHeight = dummyElement.clientHeight + 'px';
+                currentElement.cardBigShowup__text.style.minHeight = dummyElement.clientHeight + 'px';
+                setTimeout(() => {
+                    currentElement.cardBigShowup__hiddenText.style.removeProperty('max-height');
+                    currentElement.cardBigShowup__hiddenText.querySelector('.container').style.opacity = '1';
+                }, 450);
+            }, 450);
+            currentElement.element.querySelector('.btn-close').addEventListener('click', () => {
+                console.log('clicked on close');
+                currentElement.cardBigShowup__hiddenText.querySelector('.container').style.opacity = '0';
+                setTimeout(() => {
+                    currentElement.cardBigShowup__hiddenText.style.maxHeight = currentElement.cardBigShowup__hiddenText.clientHeight + 'px';
+                    setTimeout(() => {
+                        currentElement.cardBigShowup__hiddenText.style.maxHeight = '0';
+                        currentElement.cardBigShowup__text.style.minHeight = '0';
+                        setTimeout(() => {
+                            currentElement.cardBigShowup__hiddenText.style.left = currentElement.cardBigShowup__text["offset-left"] + 'px';
+                            currentElement.cardBigShowup__hiddenText.style.right = currentElement.cardBigShowup__text["offset-right"] + 'px';
+                            setTimeout(() => {
+                                currentElement.cardBigShowup__hiddenText.style.opacity = '0';
+                                coverElement.classList.remove('--active');
+                                setTimeout(()=>{
+                                    currentElement.element.classList.remove('--active');
+                                    currentElement.cardBigShowup__hiddenText.removeAttribute('style');
+                                    for(el of Object.entries(currentElement)){
+                                        el[1] = null;
+                                    }
+                                },300)
+                            }, 200)
+                        }, 150)
+                    }, 300);
+                }, 300);
+            }, false);
+
+
+            // console.log(currentElement.cardBigShowup__hiddenText.cloneNode);
+            console.log(dummyElement);
+            console.log(currentElement);
+            console.log(currentElement.cardBigShowup__text.offsetLeft);
+            console.log('left: ' + currentElement.cardBigShowup__text["offset-left"]);
+            console.log('right: ' + currentElement.cardBigShowup__text["offset-right"]);
+            console.log(currentElement.cardBigShowup__hiddenText.height);
+            console.log(currentElement.container);
+            // console.log(element);
+            // console.log(currentElement);
+            // console.log('click');
+        })
+
+
+    });
+}
+
+
+
 /* SLIDERS */
 // 1. check if there is a specific slider on a page
 // 2. set slider object and set settings
