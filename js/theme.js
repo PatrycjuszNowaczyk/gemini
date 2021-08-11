@@ -137,6 +137,27 @@ if (bigImgAndSlider) {
         }
     }, false);
 }
+// component .mediumImgAndSlider
+let mediumImgAndSlider = document.querySelector('.mediumImgAndSlider');
+if (mediumImgAndSlider) {
+    let heading = mediumImgAndSlider.querySelector('.mediumImgAndSlider__heading');
+    let mobileParent = heading.parentNode.parentNode.childNodes[1];
+    let desktopParent = heading.parentNode.parentNode.childNodes[3];
+    let isMobileChanged = window.innerWidth < 768 ? true : false;
+    if (isMobileChanged) {
+        mobileParent.insertBefore(heading, mobileParent.childNodes[1]);
+    }
+    window.addEventListener('resize', () => {
+        if (window.innerWidth < 768 && !isMobileChanged) {
+            mobileParent.insertBefore(heading, mobileParent.childNodes[1]);
+            isMobileChanged = true;
+        }
+        else if (window.innerWidth > 767 && isMobileChanged) {
+            desktopParent.insertBefore(heading, desktopParent.childNodes[1]);
+            isMobileChanged = false;
+        }
+    }, false);
+}
 // component .headerOne
 let headerOne = document.getElementById('headerOne');
 if (headerOne) {
@@ -144,12 +165,85 @@ if (headerOne) {
     let elementScrollDownTo = document.getElementById('js-scroll-down-to');
     buttonScrollDownTo.addEventListener('click', () => {
         window.scrollTo(0, elementScrollDownTo.offsetTop - navWrapper.clientHeight);
-        // window.scrollTo(0, elementScrollDownTo.offsetTop);
     }, false);
     headerOne.getElementsByClassName('headerOne__image')[0].getElementsByClassName('wrapper')[0].style.top = `calc(${navWrapper.clientHeight}px + 1.5rem)`;
     window.addEventListener('resize', () => {
         headerOne.getElementsByClassName('headerOne__image')[0].getElementsByClassName('wrapper')[0].style.top = `calc(${navWrapper.clientHeight}px + 1.5rem)`;
     }, false)
+}
+// component .headerTwo
+let headerTwo = document.getElementById('headerTwo');
+if (headerTwo) {
+    let navLinks = document.getElementById('nav-links');
+    let buttonScrollDownTo = document.getElementById('js-button-scroll-down-to');
+    let elementScrollDownTo = document.getElementById('js-scroll-down-to');
+    console.log(navLinks.getElementsByTagName('li'));
+    for (let el of navLinks.getElementsByTagName('li')) {
+        el.style.backgroundColor = '#fff';
+    };
+    console.log(window);
+    if (window.innerWidth > 767) {
+        headerTwo.getElementsByClassName('headerTwo__text')[0].style.paddingTop = `calc(${navWrapper.clientHeight}px + 1.5rem)`;
+    }
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 767) {
+            headerTwo.getElementsByClassName('headerTwo__text')[0].style.paddingTop = `calc(${navWrapper.clientHeight}px + 1.5rem)`;
+        }
+        else {
+            headerTwo.getElementsByClassName('headerTwo__text')[0].style.removeProperty('padding-top');
+        }
+    }, false)
+    buttonScrollDownTo.addEventListener('click', () => {
+        window.scrollTo(0, elementScrollDownTo.offsetTop - navWrapper.clientHeight);
+    }, false);
+}
+
+// component .headerThree
+let headerThree = document.getElementById('headerThree');
+if (headerThree) {
+    const counters = document.querySelectorAll('.counterValue');
+    const speed = 200;
+    let delay = 0;
+
+    counters.forEach(counter => {
+        const animate = () => {
+            const value = +counter.getAttribute('data-counter-value');
+            const data = +counter.innerText;
+
+            const time = value / speed;
+            if (data < value) {
+                counter.innerText = Math.ceil(data + time);
+                setTimeout(animate, 1);
+            } else {
+                counter.innerText = value;
+            }
+
+        }
+        setTimeout(() => {
+            animate();
+
+        }, delay += 800)
+    });
+}
+// component .headerFive
+let headerFive = document.getElementById('headerFive');
+if (headerFive) {
+    let buttonScrollDownTo = document.getElementById('js-button-scroll-down-to');
+    let elementScrollDownTo = document.getElementById('js-scroll-down-to');
+    buttonScrollDownTo.addEventListener('click', () => {
+        window.scrollTo(0, elementScrollDownTo.offsetTop - navWrapper.clientHeight);
+    }, false);
+}
+
+//component .parallaxImage
+let parallaxImage = document.getElementsByClassName('parallaxImage');
+if (parallaxImage[0]) {
+    let image = document.getElementsByClassName('parallaxImg');
+    new simpleParallax(image, {
+        delay: .6,
+        transition: 'cubic-bezier(0,0,0,1)'
+    });
+
 }
 
 // component .cardBigShowup
@@ -220,7 +314,7 @@ if (cardBigShowupElements[0]) {
             currentElement.cardBigShowup__hiddenText.style.right = currentElement.container.padding * 0.5 + 'px';
             setTimeout(() => {
                 currentElement.cardBigShowup__hiddenText.style.maxHeight = dummyElement.clientHeight + 'px';
-                currentElement.cardBigShowup__text.style.minHeight = dummyElement.clientHeight + 'px';
+                currentElement.cardBigShowup__text.style.minHeight = dummyElement.clientHeight - 1 + 'px';
                 setTimeout(() => {
                     currentElement.cardBigShowup__hiddenText.style.removeProperty('max-height');
                     currentElement.cardBigShowup__hiddenText.querySelector('.container').style.opacity = '1';
@@ -240,34 +334,19 @@ if (cardBigShowupElements[0]) {
                             setTimeout(() => {
                                 currentElement.cardBigShowup__hiddenText.style.opacity = '0';
                                 coverElement.classList.remove('--active');
-                                setTimeout(()=>{
+                                setTimeout(() => {
                                     currentElement.element.classList.remove('--active');
                                     currentElement.cardBigShowup__hiddenText.removeAttribute('style');
-                                    for(el of Object.entries(currentElement)){
+                                    for (el of Object.entries(currentElement)) {
                                         el[1] = null;
                                     }
-                                },300)
+                                }, 300)
                             }, 200)
                         }, 150)
                     }, 300);
                 }, 300);
             }, false);
-
-
-            // console.log(currentElement.cardBigShowup__hiddenText.cloneNode);
-            console.log(dummyElement);
-            console.log(currentElement);
-            console.log(currentElement.cardBigShowup__text.offsetLeft);
-            console.log('left: ' + currentElement.cardBigShowup__text["offset-left"]);
-            console.log('right: ' + currentElement.cardBigShowup__text["offset-right"]);
-            console.log(currentElement.cardBigShowup__hiddenText.height);
-            console.log(currentElement.container);
-            // console.log(element);
-            // console.log(currentElement);
-            // console.log('click');
         })
-
-
     });
 }
 
@@ -307,7 +386,9 @@ if (document.querySelector('.header__swiper')) {
         //     el: '.swiper-scrollbar',
         // },
     });
+    document.getElementsByTagName('nav')[0].style.backgroundColor = '#fff';
 }
+
 if (document.querySelector('.bigImgAndSlider__swiper')) {
 
     const swiper = new Swiper('.bigImgAndSlider__swiper', {
@@ -331,6 +412,30 @@ if (document.querySelector('.bigImgAndSlider__swiper')) {
         },
     });
 }
+if (document.querySelector('.mediumImgAndSlider__swiper')) {
+
+    const swiper = new Swiper('.mediumImgAndSlider__swiper', {
+        // Optional parameters
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        loop: true,
+        // spaceBetween: 0,
+        grabCursor: true,
+        keyboard: {
+            enabled: false,
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: true,
+        },
+        // Navigation arrows
+        navigation: {
+            nextEl: '.next',
+            prevEl: '.prev',
+        },
+    });
+}
+
 if (document.querySelector('.filmSlider__swiper')) {
 
     const swiper = new Swiper('.filmSlider__swiper', {
@@ -354,11 +459,8 @@ if (document.querySelector('.filmSlider__swiper')) {
         },
     });
 }
-if (document.querySelector('.gallerySlider')) {
 
-    // let lightbox = new SimpleLightbox('.gallerySlider__swiper a', {
-    //     disableScroll: true
-    // });
+if (document.querySelector('.gallerySlider')) {
     const swiper = new Swiper('.gallerySlider__swiper', {
         // Optional parameters
         slidesPerView: '1',
@@ -396,9 +498,43 @@ if (document.querySelector('.gallerySlider')) {
             },
         }
     });
-    // swiper.on('beforeLoopFix', function () {
-    //     let lightboxGallerySlider = new SimpleLightbox('.gallerySlider__swiper a', { 
-    //         disableScroll: true
-    //      });
-    //   });
+}
+if (document.querySelector('.infoLayout__descriptionSlider')) {
+    const swiper = new Swiper('.swiper-container', {
+        // Optional parameters
+        slidesPerView: '1',
+        centeredSlides: true,
+        loop: true,
+        // spaceBetween: 0,
+        grabCursor: false,
+        keyboard: {
+            enabled: true,
+        },
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: true,
+        },
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 30,
+            slideShadows: true,
+        },
+        speed: 400,
+        // Navigation arrows
+        navigation: {
+            nextEl: '.next',
+            prevEl: '.prev',
+        },
+        on: {
+            init: function () {
+                setTimeout(() => {
+                    let lightbox = new SimpleLightbox('.gallerySlider__swiper a', {
+                        disableScroll: true,
+                        uniqueImages: false,
+                        showCounter: false
+                    });
+                }, 600);
+            },
+        }
+    });
 }

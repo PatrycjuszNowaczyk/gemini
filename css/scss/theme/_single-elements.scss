@@ -146,6 +146,7 @@
             &::before {
                 border: 1px solid $primary;
                 transition: all 0.15s ease-in-out;
+                background-color: $white;
             }
             i {
                 transition: all 0.3s ease;
@@ -424,17 +425,27 @@
     i{
         font-weight: 900;
         transition: all 0.3s ease-in-out;
+        transform: scale(1) rotateZ(-360deg);
+        opacity: 1;
     }
     &:hover{
         i{
-            transform: scale(1.2);
+            transform: scale(1.2) rotateZ(-360deg);
             transition: all 0.15s ease-in-out;
             text-shadow: 0 0 1rem rgba($black, 0.3);
         }
     }
     &:active{
         i{
-            transform: scale(1);
+            transform: scale(1) rotateZ(-360deg);
+            transition: all 0.15s ease-in-out;
+        }
+    }
+    &:focus{
+        i{
+            opacity: 0;
+            transform: scale(1) rotateZ(0);
+            transition: all 0.3s ease-in-out;
         }
     }
 }

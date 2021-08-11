@@ -16,6 +16,11 @@ main {
 footer {
     opacity: 0;
     animation: mainFadeIn 0.6s 0.8s ease-in-out forwards;
+    a:not(.btn){
+        &:hover{
+            color: $primary;
+        }
+    }
 }
 
 // IMPORT FONTS

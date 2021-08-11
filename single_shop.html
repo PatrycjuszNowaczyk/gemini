@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini Park</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/brand_icon@0.25x.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand_icon@0.5x.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/img/brand_icon.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="assets/img/brand_icon@2x.png">
+    <link rel="icon" type="image/png" sizes="256x256" href="assets/img/brand_icon@4x.png">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="assets/fonts/lineicons/lineicons.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/simple-lightbox.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container-xxl">
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="nav__wrapper">
+                        <div class="nav__logo">
+                            <a href="index.html">
+                                <img id="nav-logo" src="assets/img/logo_geminipark.svg" alt="">
+                            </a>
+                        </div>
+                        <div class="nav__linksWrapper">
+                            <button id="nav-menu-button" class="hamburger hamburger--spin d-md-none" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                            <div class="nav__searchAndSocials">
+                                <div id="nav-search" class="nav__searchWrapper">
+                                    <form id="nav-search-form" action="" class="nav__searchForm">
+                                        <input id="nav-search-input" name="nav-search" type="search" class="nav__searchInput" autocomplete="off">
+                                        <button type="submit" class="nav__searchButton"><i class="lni lni-search-alt"></i></button>
+                                    </form>
+                                </div>
+                                <div id="nav-socials" class="nav__socials">
+                                    <a href="" target="_blank" class="socialIcon me-2"><i class="lni lni-facebook-filled"></i></a>
+                                    <a href="" target="_blank" class="socialIcon me-2"><i class="lni lni-instagram-original"></i></a>
+                                    <a href="" target="_blank" class="socialIcon"><i class="lni lni-youtube"></i></a>
+                                </div>
+                                <div class="languageSwitcher"></div>
+                            </div>
+                            <div id="nav-links" class="nav__links">
+                                <ul>
+                                    <li>
+                                        <a href="shops.html">sklepy</a>
+                                    </li>
+                                    <li>
+                                        <a href="map.html">plan centrum</a>
+                                    </li>
+                                    <li>
+                                        <a href="feeds.html">aktualności</a>
+                                    </li>
+                                    <li>
+                                        <a href="offers.html">promocje i nowości</a>
+                                    </li>
+                                    <li>
+                                        <a href="informations.html">informacje</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">kontakt</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="nav-mobile-wrapper" class="nav__mobile d-md-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <header class="js-add-top-padding">
+        <div class="container-xxl">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumbs fs-7 my-4">
+                        <a href="index.html" class="breadcrumbs__homeIcon">
+                            <i class="lni lni-home"></i>
+                        </a>
+                        <ol>
+                            <li>
+                                <a href="404.html" class="breadcrumbs__link">Lorem, ipsum dolor.</a>
+                            </li>
+                            <li>
+                                <a href="404.html" class="breadcrumbs__link">Lorem, ipsum dolor. Lorem, ipsum.</a>
+                            </li>
+                            <li>
+                                <a href="404.html" class="breadcrumbs__link">Lorem, ipsum dolor.</a>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="infoLayout pb-5">
+            <div class="container-xxl">
+                <div class="row g-4">
+                    <div class="col-12 col-md-4 col-lg-3">
+                        <div class="row g-4">
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="mx-4 mx-sm-0 py-5 shadow">
+                                    <h1 class="fs-1 text-center mt-5 mb-4">NazwaFirmy</h1>
+                                    <p class="text-center mb-2"><a href="" class="color-black">www.stronafirmy.com</a></p>
+                                    <p class="text-center mb-0"><a href="tel:" class="color-black">+48 123 123 123</a></p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-12">
+                                <div class="mx-4 mx-sm-0 py-4 bg-grey-light">
+                                    <h2 class="fs-4 text-center mb-2">Godziny otwarcia</h2>
+                                    <p class="text-center mb-0">Poniedziałek - Czwartek</p>
+                                    <p class="text-center mb-1">Od 10:00 Do 22:00</p>
+                                    <p class="text-center mb-0">Piątek, Sobota</p>
+                                    <p class="text-center mb-1">Od 9:00 Do 23:00</p>
+                                    <p class="text-center mb-0">Niedziela</p>
+                                    <p class="text-center mb-1">zamknięte</p>
+                                    <p class="text-center mb-0"><a href="" class="btn --fill">pokaż na mapie<i class="lni lni-plus"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-9">
+                        <div class="infoLayout__description">
+                            <div class="infoLayout__socials">
+                                <a href="" target="_blank" class="socialIcon"><i class="lni lni-facebook-filled"></i></a>
+                                <a href="" target="_blank" class="socialIcon"><i class="lni lni-instagram-original"></i></a>
+                                <a href="" target="_blank" class="socialIcon"><i class="lni lni-youtube"></i></a>
+                            </div>
+                            <div class="infoLayout__descriptionName"> NazwaFirmy </div>
+                            <div class="infoLayout__descriptionText">
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur dolor, earum officiis aliquid eius sint delectus quod? A, ducimus soluta repudiandae quas sunt harum suscipit nobis amet omnis odio natus aut dolorum hic sit cumque rerum fuga dolorem labore repellat facere doloribus modi dolores quis eaque! Velit sit reiciendis adipisci.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ex vero vel incidunt ullam recusandae maxime, repudiandae hic ipsum expedita ipsam deserunt, sequi aliquid consequatur ad perspiciatis accusamus explicabo rem. Perferendis tempore minima cupiditate deserunt odio, provident voluptates accusamus maxime quos porro eos hic neque placeat incidunt reiciendis possimus eius.
+                                </p>
+                            </div>
+                            <div class="infoLayout__descriptionSlider">
+                                <!-- Slider main container -->
+                                <div class="swiper-container">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                        <!-- Slides -->
+                                        <div class="swiper-slide">
+                                            <img src="assets/img/dummy_img/dummy_4x3ratio_1_big.jpg" alt="" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/img/dummy_img/dummy_4x3ratio_2_big.jpg" alt="" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/img/dummy_img/dummy_4x3ratio_3_big.jpg" alt="" />
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="assets/img/dummy_img/dummy_4x3ratio_4_big.jpg" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn --square --fill prev"><i class="lni lni-arrow-left"></i></button>
+                                <button class="btn --square --fill next"><i class="lni lni-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class=" bg-grey-light">
+            <div class="container-xxl pb-5">
+                <div class="row">
+                    <h2 class="my-4 fs-1">Zobacz inne z tej kategorii</h2>
+                </div>
+                <div class="row g-4">
+                    <!-- SKLEPY -->
+                    <!-- wyniki wyszukiwania START -->
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleLogo">
+                            <div class="cardSimpleLogo__wrapper">
+                                <div class="cardSimpleLogo__image">
+                                    <div class="cardSimpleLogo__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_logos/dummy_logo_(1).png" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleLogo__description">
+                                    <p>
+                                        Lorem, ipsum dolor.
+                                    </p>
+                                    <p>
+                                        Poziom 0
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="btn --square --fill"><i class="lni lni-arrow-right"></i></span>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleLogo">
+                            <div class="cardSimpleLogo__wrapper">
+                                <div class="cardSimpleLogo__image">
+                                    <div class="cardSimpleLogo__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_logos/dummy_logo_(2).png" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleLogo__description">
+                                    <p>
+                                        Lorem, ipsum dolor. Lorem.
+                                    </p>
+                                    <p>
+                                        Poziom 1
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="btn --square --fill"><i class="lni lni-arrow-right"></i></span>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleLogo">
+                            <div class="cardSimpleLogo__wrapper">
+                                <div class="cardSimpleLogo__image">
+                                    <div class="cardSimpleLogo__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_logos/dummy_logo_(3).png" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleLogo__description">
+                                    <p>
+                                        Lorem, ipsum dolor.
+                                    </p>
+                                    <p>
+                                        Poziom 0
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="btn --square --fill"><i class="lni lni-arrow-right"></i></span>
+                        </a>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3">
+                        <a href="" class="cardSimpleLogo">
+                            <div class="cardSimpleLogo__wrapper">
+                                <div class="cardSimpleLogo__image">
+                                    <div class="cardSimpleLogo__imageWrapper">
+                                        <img src="assets/img/dummy_img/dummy_logos/dummy_logo_(4).png" alt="">
+                                    </div>
+                                </div>
+                                <div class="cardSimpleLogo__description">
+                                    <p>
+                                        Lorem, ipsum dolor sit amet.
+                                    </p>
+                                    <p>
+                                        Poziom 1
+                                    </p>
+                                </div>
+                            </div>
+                            <span class="btn --square --fill"><i class="lni lni-arrow-right"></i></span>
+                        </a>
+                    </div>
+                    <!-- wyniki wyszukiwania END -->
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center pt-5">
+                            <a href="shops.html" class="btn">wróć<i class="lni lni-plus"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="bg-black color-white">
+            <div class="container-xxl py-4">
+                <div class="row g-4">
+                    <div class="col-12 col-sm-6 col-md-3 col-xxl-2 d-flex justify-content-center justify-content-md-start">
+                        <div class="text-center text-md-start">
+                            <address>
+                                <p class="fw-bold text-uppercase mb-1">Gemini Park Tychy</p>
+                                <p class=" mb-1">ul. Towarowa 2C,</p>
+                                <p class=" mb-1">43-100 Tychy</p>
+                                <p class=" mb-1">
+                                tel.: <a href="tel:+48322138601" class="color-white">+48 32 213 86 01</a>
+                                </p>
+                            </address>
+                            <div>
+                                <a href="contact.html" class="btn --white">sprawdź jak dojechać<i class="lni lni-plus"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 col-xxl-2 d-flex justify-content-center justify-content-xxl-end">
+                        <div class="text-center text-md-start">
+                            <p class="text-uppercase mb-1">informacje</p>
+                            <p class=" mb-1">
+                            <a href="informations.html" class="color-white">Godziny otwarcia</a>
+                            </p>
+                            <p class=" mb-1">
+                            <a href="informations.html" class="color-white">O centrum</a>
+                            </p>
+                            <p class=" mb-1">
+                            <a href="informations.html" class="color-white">Usługi</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 col-xxl-2 d-flex justify-content-center justify-content-xxl-end">
+                        <div class="text-center text-md-start">
+                            <p class="text-uppercase mb-1">biznes</p>
+                            <p class=" mb-1">
+                            <a href="business.html" class="color-white">Wynajem</a>
+                            </p>
+                            <p class=" mb-1">
+                            <a href="business.html" class="color-white">Oferty pracy</a>
+                            </p>
+                            <p class=" mb-1">
+                            <a href="business.html" class="color-white">Gemini Holding</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-3 col-xxl-2 d-flex justify-content-center justify-content-xxl-end">
+                        <div class="text-center text-md-start">
+                            <p class="text-uppercase mb-1">kontakt</p>
+                            <p class=" mb-1">
+                            <a href="contact.html" class="color-white">Jak dojechać</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-xxl-4 d-flex align-items-end">
+                        <p class="w-100 mb-0 text-center text-xxl-end">
+                        <a href="privacy_policy.html" class="color-white">polityka prywatności</a>
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white">
+            <div class="container-xxl">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex flex-column flex-sm-row  justify-content-sm-between align-items-center pt-2 pb-4">
+                            <p class="mb-3 m-sm-0 fs-7">
+                               <span class="d-block d-sm-inline text-center">technologia + kreacja <a href="https://www.synermedia.pl/" target="_blank" class="color-black me-sm-4">synermedia.pl</a></span>
+                               <span class="d-block d-sm-inline text-center">Gemini Park. All rights reserved.</span>
+                            </p>
+                            <p class="m-0">
+                                <a href="" target="_blank" class="socialIcon me-2"><i class="lni lni-facebook-filled"></i></a>
+                                <a href="" target="_blank" class="socialIcon me-2"><i class="lni lni-instagram-original"></i></a>
+                                <a href="" target="_blank" class="socialIcon"><i class="lni lni-youtube"></i></a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- globally used scripts -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- used for this view -->
+    <script src="js/swiper.js"></script>
+    <!-- global theme script -->
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
